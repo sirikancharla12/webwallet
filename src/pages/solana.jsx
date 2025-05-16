@@ -10,10 +10,10 @@ export default function Solana({mnemonic}) {
   const [publicKeys, setPublicKeys] = useState([]);  
 
 
-  function solAction() {
-    const seed = mnemonicToSeed(mnemonic);
+  async function solAction() {
+    const seed =await mnemonicToSeed(mnemonic);
 
-    const path = `m/44'/501'/${index}'/0/0`;
+    const path = `m/44'/501'/${index}'`;
 
     const { key } = derivePath(path, seed.toString("hex"));  
 
